@@ -62,7 +62,7 @@ export const EmailItemModal = () => {
     <div
       className={`${
         openEmailModal ? "w-[65%]" : "hidden"
-      } p-5 bg-white border border-border flex rounded-lg gap-3 text-text h-screen`}
+      } p-5 bg-white border border-border flex rounded-lg gap-3 text-text h-fit`}
     >
       <div className="">
         <div className="rounded-full text-lg h-10 w-10 text-white bg-accent flex items-center justify-center">

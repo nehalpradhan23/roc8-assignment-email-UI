@@ -7,7 +7,7 @@ import React from "react";
 export const Email = ({ item }: { item: SingleDataType }) => {
   const {
     currentEmailObject: { currentEmailItem, setCurrentEmailItem },
-    openEmailModalObject: { openEmailModal, setOpenEmailModal },
+    openEmailModalObject: { setOpenEmailModal },
     allDataObject: { allData, setAllData },
     emailLoadingObject: { setEmailLoading },
   } = useGlobalContext();
@@ -53,7 +53,9 @@ export const Email = ({ item }: { item: SingleDataType }) => {
     <div
       className={`flex border text-[14px] gap-5 px-5 py-3 rounded-md cursor-pointer ${
         item?.isRead ? "bg-readBackground" : "bg-white"
-      } ${currentEmailItem?.id === item?.id && "border-accent"}`}
+      } ${
+        currentEmailItem?.id === item?.id ? "border-accent" : "border-border"
+      }`}
       onClick={() => openEmail(item?.id)}
     >
       <div className="">
@@ -65,10 +67,11 @@ export const Email = ({ item }: { item: SingleDataType }) => {
       <div className="*:text-text *:flex *:gap-1">
         <div className="">
           <span>From:</span>
-          <span className="font-bold">
-            {item?.from.name} {"<"}
-            {item?.from.email}
-            {">"}
+          <span className="font-semibold *:text-sm">
+            <span className="capitalize">{item?.from.name}</span>{" "}
+            <span className="">{"<"}</span>
+            <span>{item?.from.email}</span>
+            <span>{">"}</span>
           </span>
         </div>
         <div className="">

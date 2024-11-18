@@ -25,11 +25,11 @@ export const FilterBtns = () => {
     selectedFilterObject: { selectedFilter, setSelectedFilter },
     currentPageObject: { currentPage, setCurrentPage },
   } = useGlobalContext();
-  console.log("filter: ", selectedFilter);
+  // console.log("filter: ", selectedFilter);
 
   const handleFilterSelect = (btn: number) => {
     setCurrentPage(1);
-    console.log(btn);
+    // console.log(btn);
     if (selectedFilter === btn) {
       setSelectedFilter(0);
       return;

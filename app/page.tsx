@@ -2,12 +2,11 @@
 import { EmailItemModal } from "@/components/Emails/EmailItemModal";
 import { EmailList } from "@/components/Emails/EmailList";
 import { FilterBtns } from "@/components/FilterBtns";
-import { ContextProvider, useGlobalContext } from "@/Context/ContextApi";
-import { useContext } from "react";
+import { useGlobalContext } from "@/Context/ContextApi";
 
 export default function Home() {
   const {
-    allDataObject: { allData, setAllData },
+    allDataObject: { allData },
   } = useGlobalContext();
 
   // const {

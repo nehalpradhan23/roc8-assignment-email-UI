@@ -1,27 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Email } from "./Email";
 import { useGlobalContext } from "@/Context/ContextApi";
-import { SingleDataType } from "@/types/types";
 
 export const EmailList = () => {
   const {
-    allDataObject: { allData, setAllData },
-    openEmailModalObject: { openEmailModal, setOpenEmailModal },
+    openEmailModalObject: { openEmailModal },
     selectedFilterObject: { selectedFilter },
     filteredDataObject: { filteredData },
     currentPageObject: { currentPage, setCurrentPage },
   } = useGlobalContext();
-  // const [currentPage, setCurrentPage] = useState(1);
-  // const [currentData, setCurrentData] = useState<SingleDataType[]>([]);
 
   // for pagination -----------------------------------------
   const objectsPerPage = 8;
   const indexOfLastObject = currentPage * objectsPerPage;
   const indexOfFirstObject = indexOfLastObject - objectsPerPage;
   const currentData = filteredData.slice(indexOfFirstObject, indexOfLastObject);
-  console.log("current data: ", currentData);
-
-  // setCurrentData(allData.slice(indexOfFirstObject, indexOfLastObject));
+  // console.log("current data: ", currentData);
 
   const totalDataNumber = filteredData.length;
   const numberOfPages = Math.ceil(totalDataNumber / objectsPerPage);
@@ -54,7 +48,6 @@ export const EmailList = () => {
         {[...Array(numberOfPages)].map((x, i) => (
           <button
             onClick={() => setCurrentPage(i + 1)}
-            // onClick={() => handlePageChange(i)}
             key={i}
             className={`h-10 w-10 flex items-center justify-center rounded-full cursor-pointer ${
               currentPage === i + 1
