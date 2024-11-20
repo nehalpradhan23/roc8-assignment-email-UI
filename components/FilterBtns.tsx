@@ -23,7 +23,7 @@ const btns = [
 export const FilterBtns = () => {
   const {
     selectedFilterObject: { selectedFilter, setSelectedFilter },
-    currentPageObject: { currentPage, setCurrentPage },
+    currentPageObject: { setCurrentPage },
   } = useGlobalContext();
   // console.log("filter: ", selectedFilter);
 

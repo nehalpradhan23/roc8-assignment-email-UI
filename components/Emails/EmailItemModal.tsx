@@ -77,7 +77,7 @@ export const EmailItemModal = () => {
           </span>
           <button
             className="rounded-full bg-accent text-white py-1 px-4 text-sm"
-            onClick={() => addToFavorite(currentEmailItem?.id!)}
+            onClick={() => addToFavorite(currentEmailItem?.id)}
           >
             {/* Mark as favorite */}
             {currentEmailItem?.isFavorite
@@ -86,9 +86,9 @@ export const EmailItemModal = () => {
           </button>
         </div>
         {/* ----------------------------------- */}
-        <span className="mr-8">{formatDate(currentEmailItem?.date!)}</span>
+        <span className="mr-8">{formatDate(currentEmailItem?.date)}</span>
         {/* {JSON.stringify(currentEmailItem)} */}
-        <div dangerouslySetInnerHTML={{ __html: currentEmailItem?.body! }} />
+        <div dangerouslySetInnerHTML={{ __html: currentEmailItem?.body }} />
       </section>
     </div>
   );
